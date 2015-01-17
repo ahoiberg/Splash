@@ -3,4 +3,5 @@
     android:layout_height="match_parent" android:id="@+id/map"
     tools:context="com.example.andrewhoiberg.thirsty_bro.MapsActivity"
     android:name="com.google.android.gms.maps.SupportMapFragment"
-    tools:layout="@layout/activity_maps" />
+    tools:layout="@layout/activity_maps"
+    android:padding="16dp" />
