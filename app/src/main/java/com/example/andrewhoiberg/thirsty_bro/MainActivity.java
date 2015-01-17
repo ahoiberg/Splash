@@ -24,6 +24,10 @@ import java.util.HashMap;
 
 public class MainActivity extends ActionBarActivity implements SAAnkletInterface {
 
+    public static final String PREFS_NAME="THIRSTY_BRO_PREFS";
+
+
+
     SAAnklet anklet;
 
     @Override

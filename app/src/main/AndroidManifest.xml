@@ -5,7 +5,9 @@
 
     <uses-sdk
         android:minSdkVersion="18"
-        tools:overrideLibrary="com.sensoria.sensorialibrary"/>
+        tools:overrideLibrary="com.sensoria.sensorialibrary" />
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -20,6 +22,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".UserSettings"
+            android:label="@string/title_activity_user_settings" >
         </activity>
     </application>
 
