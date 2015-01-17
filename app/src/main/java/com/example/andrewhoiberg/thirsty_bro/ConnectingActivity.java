@@ -131,27 +131,14 @@ public class ConnectingActivity extends ActionBarActivity implements SAAnkletInt
 
         Log.w("SensoriaLibrary", "Device Connected!");
 
-        Intent returnIntent = new Intent();
+        AnkletPasser.anklet = anklet;
 
-
-        Bundle r = new Bundle();
-        r.put
-
-        returnIntent.putExtra("result",new AnkletPasser(anklet));
-        setResult(RESULT_OK,returnIntent);
-
-
-        Toast.makeText(this,"Connected.", Toast.LENGTH_LONG);
-
-        finish();
-
-
-//        openMainActivity();
+        openBeforeRunActivity();
 
     }
 
-    public void openMainActivity(){
-        this.startActivity(new Intent(this,MainActivity.class));
+    public void openBeforeRunActivity(){
+        this.startActivity(new Intent(this,BeforeRunActivity.class));
     }
 
 
