@@ -10,4 +10,10 @@
         android:text="How dehydrated are you?"
         android:id="@+id/textView"
         android:layout_gravity="left|top" />
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chronometer"
+        android:layout_gravity="center_horizontal|bottom" />
 </FrameLayout>
