@@ -40,10 +40,28 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
 
         SharedPreferences settings = getSharedPreferences(UserPreferences.PREFS_NAME, 0);
 
-        if(settings.getInt("age",-1)==-1){
+        if(settings.getInt("age",-1)==-1||settings.getInt("height",-1)==-1||settings.getInt("weight",-1)==-1||!settings.contains("isMale")){
             openUserSettings();
+        }else{
+            displayUserPreferences();
         }
 
+
+
+    }
+
+    public void displayUserPreferences(){
+        TextView age = (TextView) findViewById(R.id.ageValue);
+        TextView height = (TextView) findViewById(R.id.heightValue);
+        TextView weight = (TextView) findViewById(R.id.weightValue);
+        TextView gender = (TextView) findViewById(R.id.genderValue);
+
+        SharedPreferences settings = getSharedPreferences(UserPreferences.PREFS_NAME, 0);
+
+        age.setText(String.format("%d", settings.getInt("age",0)));
+        height.setText(String.format("%d", settings.getInt("height",-1)));
+        weight.setText(String.format("%d", settings.getInt("weight",0)));
+        gender.setText(settings.getBoolean("isMale",true)?"Male":"Female");
     }
 
     @Override
@@ -100,7 +118,7 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
     }
 
     public void openUserSettings(){
-        this.startActivity(new Intent(this,UserSettings.class));
+        this.startActivity(new Intent(this,UserSettingsActivity.class));
     }
 
     private String selectedCode;
@@ -159,6 +177,7 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
         TextView accY = (TextView) findViewById(R.id.accYValue);
         TextView accZ = (TextView) findViewById(R.id.accZValue);
 
+
         tick.setText(String.format("%d", anklet.tick));
         mtb1.setText(String.format("%d", anklet.mtb1));
         mtb5.setText(String.format("%d", anklet.mtb5));
@@ -166,6 +185,7 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
         accX.setText(String.format("%f", anklet.accX));
         accY.setText(String.format("%f", anklet.accY));
         accZ.setText(String.format("%f", anklet.accZ));
+
     }
 
 }

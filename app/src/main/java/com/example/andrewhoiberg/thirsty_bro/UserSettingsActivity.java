@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.content.SharedPreferences;
 
-public class UserSettings extends ActionBarActivity {
+public class UserSettingsActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,14 @@ public class UserSettings extends ActionBarActivity {
     }
 
     private int getIntSetting(int id){
-        return Integer.parseInt(((EditText)findViewById(id)).getText().toString());
+        String s =((EditText)findViewById(id)).getText().toString();
+        int i=0;
+        try {
+            i = Integer.parseInt(s);
+        }catch(RuntimeException e){
+
+        }
+        return i;
     }
 
     private void setStringSetting(int id, int s){
