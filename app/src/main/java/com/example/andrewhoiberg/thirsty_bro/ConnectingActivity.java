@@ -129,7 +129,18 @@ public class ConnectingActivity extends ActionBarActivity implements SAAnkletInt
     public void didConnect() {
 
         Log.w("SensoriaLibrary", "Device Connected!");
-        openMainActivity();
+
+        Intent returnIntent = new Intent();
+
+        returnIntent.putExtra("result",new AnkletPasser(anklet));
+        setResult(RESULT_OK,returnIntent);
+
+        Toast.makeText(this,"Connected.", Toast.LENGTH_LONG);
+
+        finish();
+
+
+//        openMainActivity();
 
     }
 

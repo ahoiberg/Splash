@@ -2,6 +2,7 @@ package com.example.andrewhoiberg.thirsty_bro;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -125,8 +126,26 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
         this.startActivity(new Intent(this,UserSettingsActivity.class));
     }
 
+    final static int CONNECTION_REQUEST_CODE=1;
     public void openConnectionSettings(){
         this.startActivity(new Intent(this,ConnectingActivity.class));
+        Intent connectionSettingsIntent = new Intent(this,ConnectingActivity.class);
+        startActivityForResult(connectionSettingsIntent, CONNECTION_REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CONNECTION_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                // The user picked a contact.
+                // The Intent's data Uri identifies which contact was selected.
+
+                // Do something with the contact here (bigger example below)
+                SAAnklet anklet = ((AnkletPasser)data.getSerializableExtra("result")).anklet;
+                Log.d("TB","WORKS");
+
+            }
+        }
     }
 
     private String selectedCode;
