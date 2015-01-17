@@ -40,7 +40,7 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
 
         SharedPreferences settings = getSharedPreferences(UserPreferences.PREFS_NAME, 0);
 
-        if(settings.getInt("age",-1)!=-1){
+        if(settings.getInt("age",-1)==-1){
             openUserSettings();
         }
 
