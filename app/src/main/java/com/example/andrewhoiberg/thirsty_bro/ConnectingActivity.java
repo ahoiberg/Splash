@@ -133,8 +133,13 @@ public class ConnectingActivity extends ActionBarActivity implements SAAnkletInt
 
         Intent returnIntent = new Intent();
 
+
+        Bundle r = new Bundle();
+        r.put
+
         returnIntent.putExtra("result",new AnkletPasser(anklet));
         setResult(RESULT_OK,returnIntent);
+
 
         Toast.makeText(this,"Connected.", Toast.LENGTH_LONG);
 
