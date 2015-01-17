@@ -1,5 +1,6 @@
 package com.example.andrewhoiberg.thirsty_bro;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;

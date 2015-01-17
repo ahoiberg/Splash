@@ -1,5 +1,6 @@
 package com.example.andrewhoiberg.thirsty_bro;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v4.app.FragmentActivity;
