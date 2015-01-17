@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Thirsty Bro</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">User Settings</string>
     <string name="title_activity_user_settings">User Settings</string>
     <string name="user_settings_weight">Weight</string>
     <string name="user_settings_weight_lb">(lbs)</string>

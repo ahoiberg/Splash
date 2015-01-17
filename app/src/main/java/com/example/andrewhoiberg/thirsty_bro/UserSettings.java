@@ -60,7 +60,7 @@ public class UserSettings extends ActionBarActivity {
 
 
     public void saveSettings(){
-        SharedPreferences settings = getSharedPreferences(MainActivity.PREFS_NAME, 0);
+        SharedPreferences settings = getSharedPreferences(UserPreferences.PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
 
         int age = getIntSetting(R.id.AgeYr);
@@ -80,7 +80,7 @@ public class UserSettings extends ActionBarActivity {
     @Override
     public void onResume(){
         super.onResume();
-        SharedPreferences settings = getSharedPreferences(MainActivity.PREFS_NAME, 0);
+        SharedPreferences settings = getSharedPreferences(UserPreferences.PREFS_NAME, 0);
         if(settings.getInt("age",-1)!=-1)setStringSetting(R.id.AgeYr,settings.getInt("age",0));
         if(settings.getInt("weight",-1)!=-1)setStringSetting(R.id.WeightLb,settings.getInt("weight",0));
         if(settings.getInt("height",-1)!=-1)setStringSetting(R.id.HeightFt,settings.getInt("height",0)%12);
