@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:.idea/libraries/play_services_6_5_87.xml
 <component name="libraryTable">
 <<<<<<< HEAD:.idea/libraries/appcompat_v7_21_0_2.xml
   <library name="appcompat-v7-21.0.2">
@@ -9,9 +10,34 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/sensorialibrary/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res" />
       <root url="jar://$PROJECT_DIR$/sensorialibrary/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar!/" />
+<<<<<<< Updated upstream
 >>>>>>> 2a22ffd9df1fd8c799749cad212a165bdd64d948:.idea/libraries/play_services_6_5_87.xml
+=======
+=======
+<<<<<<< Updated upstream
+<component name="libraryTable">
+  <library name="appcompat-v7-21.0.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sensorialibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/sensorialibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
   </library>
+=======
+<component name="libraryTable">
+  <library name="appcompat-v7-21.0.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sensorialibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/sensorialibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/res" />
+>>>>>>> Stashed changes:.idea/libraries/appcompat_v7_21_0_2.xml
+>>>>>>> Stashed changes
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+<<<<<<< Updated upstream:.idea/libraries/play_services_6_5_87.xml
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes:.idea/libraries/appcompat_v7_21_0_2.xml
 </component>
