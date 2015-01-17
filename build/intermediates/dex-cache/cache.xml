@@ -5,8 +5,15 @@
         jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/thirsty_bro/sensorialibrary/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="b4f60170627891744ca87f45d41ab1647e07c643">
+        sha1="168fd1e7e7dae731b6fc6209c160049a665335be">
         <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-779e67b093658b88f41000a179b5ebbaf4d98ffa.jar" />
+    </item>
+    <item
+        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-c8afb07d405292b7ddca19a84d890bd7a9264d1b.jar" />
     </item>
 
 </items>
