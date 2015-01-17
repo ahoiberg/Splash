@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <component name="libraryTable">
   <library name="support-v4-21.0.3">
@@ -12,6 +13,9 @@
     </SOURCES>
   </library>
 =======
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 <component name="libraryTable">
   <library name="support-v4-21.0.3">
     <CLASSES>
@@ -24,5 +28,20 @@
       <root url="jar://$USER_HOME$/Documents/workspace/adt-bundle-mac-x86_64-20140702 4/sdk/extras/android/m2repository/com/android/support/support-v4/21.0.3/support-v4-21.0.3-sources.jar!/" />
     </SOURCES>
   </library>
+<<<<<<< Updated upstream
 >>>>>>> 2a22ffd9df1fd8c799749cad212a165bdd64d948
+=======
+=======
+<component name="libraryTable">
+  <library name="support-v4-21.0.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 </component>

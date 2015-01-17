@@ -114,11 +114,19 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
             openUserSettings();
         }
 
+        if (id == R.id.connect_settings) {
+            openConnectionSettings();
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
     public void openUserSettings(){
         this.startActivity(new Intent(this,UserSettingsActivity.class));
+    }
+
+    public void openConnectionSettings(){
+        this.startActivity(new Intent(this,ConnectingActivity.class));
     }
 
     private String selectedCode;

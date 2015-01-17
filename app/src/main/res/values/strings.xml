@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Thirsty Bro</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">User Settings</string>
@@ -15,5 +16,8 @@
     <string name="user_settings_gender_male">Male</string>
     <string name="user_settings_gender_female">Female</string>
     <string name="user_settings_save">Save</string>
+    <string name="title_activity_connecting">Connect to Sensoria</string>
+    <string name="connect_settings">Connect to Sensoria</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

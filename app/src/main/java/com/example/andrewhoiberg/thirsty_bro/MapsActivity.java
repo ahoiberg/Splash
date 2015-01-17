@@ -83,7 +83,7 @@ public class MapsActivity extends FragmentActivity {
     public LocationListener locationListener = new LocationListener() {
         public void onLocationChanged(Location location) {
             // Called when a new location is found by the network location provider.
-            makeUseOfNewLocation(location);
+         //   makeUseOfNewLocation(location);
         }
 
         public void onStatusChanged(String provider, int status, Bundle extras) {}
@@ -91,6 +91,13 @@ public class MapsActivity extends FragmentActivity {
         public void onProviderEnabled(String provider) {}
 
         public void onProviderDisabled(String provider) {}
+<<<<<<< HEAD
+    };
+
+// Register the listener with the Location Manager to receive location updates
+    //locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+=======
+>>>>>>> fd85bf4b029a295278cc2a113ca1deb60aa0f755
 
     };
 
