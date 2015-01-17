@@ -1,7 +1,9 @@
 package com.example.andrewhoiberg.thirsty_bro;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,7 +49,7 @@ public class UserSettings extends ActionBarActivity {
     }
 
     public void onSaveSettings(View view) {
-
+        saveSettings();
     }
 
     private int getIntSetting(int id){
@@ -60,6 +62,7 @@ public class UserSettings extends ActionBarActivity {
 
 
     public void saveSettings(){
+        Log.d("TB", "Saved!");
         SharedPreferences settings = getSharedPreferences(UserPreferences.PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
 
@@ -74,6 +77,8 @@ public class UserSettings extends ActionBarActivity {
         editor.putBoolean("isMale",isMale);
 
         editor.commit();
+
+        openMainActivity();
 
     }
 
@@ -90,5 +95,11 @@ public class UserSettings extends ActionBarActivity {
         ((RadioButton)findViewById(R.id.GenderFemale)).setChecked(!settings.getBoolean("isMale",false));
 
     }
+
+
+    public void openMainActivity(){
+        this.startActivity(new Intent(this,MainActivity.class));
+    }
+
 
 }

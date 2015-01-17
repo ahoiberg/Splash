@@ -101,7 +101,6 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
 
     public void openUserSettings(){
         this.startActivity(new Intent(this,UserSettings.class));
-        Log.d("!", "User");
     }
 
     private String selectedCode;
