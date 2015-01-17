@@ -2,32 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-cb3499443b318bec9ceb930d402a39e3eead864c.jar" />
-    </item>
-    <item
-        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jar="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-5f84bc17363ae63d9e48b7908db66a4b7ec179f6.jar" />
+        <dex dex="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-352b7377d71e10b302a4387b9eb8d31dc432acf4.jar" />
     </item>
     <item
-        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-33086333267e78a9571d64810486edabe05af852.jar" />
-    </item>
-    <item
-        jar="/Users/andrewhoiberg/Documents/workspace/adt-bundle-mac-x86_64-20140702 4/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jar="C:\Users\Martin\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-71fb1de5a4a0f964ddfc23326519d757df2d8084.jar" />
+        <dex dex="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-915b63819f694276d71a837e0b424d3db730cd1b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\pre-dexed\debug\classes-e4d0e120fc88567d20e0f4560d87c5908c5bb4ac.jar" />
+    </item>
+    <item
+        jar="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\pre-dexed\debug\classes-110f48d1c1c53f7d8f95c9aba0bbb5f79b1350fc.jar" />
+    </item>
+    <item
+        jar="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\exploded-aar\thirsty_bro\sensorialibrary\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="663ad3a7eed383895cece6dff1ed2c2857e9bd39">
+        <dex dex="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\pre-dexed\debug\classes-e4c422690d2a945fe04f9f45bc07a220d53fdcd7.jar" />
     </item>
 
 </items>

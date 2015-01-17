@@ -1,28 +1,74 @@
 package com.example.andrewhoiberg.thirsty_bro;
 
+import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.sensoria.sensorialibrary.SAAnklet;
+import com.sensoria.sensorialibrary.SAAnkletInterface;
+import com.sensoria.sensorialibrary.SAFoundAnklet;
+
+import java.util.HashMap;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements SAAnkletInterface {
+
+    SAAnklet anklet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
+
+        anklet = new SAAnklet(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        anklet.resume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        anklet.pause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        anklet.disconnect();
+    }
+
+    public void onStartScan(View view) {
+        anklet.startScan();
+    }
+
+    public void onStopScan(View view) {
+        anklet.stopScan();
+    }
+
+    public void onConnect(View view) {
+
+        Log.w("SensoriaLibrary", "Connect to " + selectedCode + " " + selectedMac);
+        anklet.deviceCode = selectedCode;
+        anklet.deviceMac = selectedMac;
+        anklet.connect();
     }
 
 
@@ -48,19 +94,68 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
+    private String selectedCode;
+    private String selectedMac;
 
-        public PlaceholderFragment() {
-        }
+    @Override
+    public void didDiscoverDevice() {
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
-        }
+        Log.w("SensoriaLibrary", "Device Discovered!");
+
+        Spinner s = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, anklet.deviceDiscoveredList);
+        s.setAdapter(adapter);
+
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                SAFoundAnklet deviceDiscovered = anklet.deviceDiscoveredList.get(position);
+                selectedCode = deviceDiscovered.deviceCode;
+                selectedMac = deviceDiscovered.deviceMac;
+
+                Log.d("SensoriaLibrary", selectedCode + " " + selectedMac);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                selectedCode = null;
+            }
+        });
+    }
+
+    @Override
+    public void didConnect() {
+
+        Log.w("SensoriaLibrary", "Device Connected!");
+
+    }
+
+    @Override
+    public void didError(String message) {
+
+        Log.e("SensoriaLibrary", message);
+
+    }
+
+    @Override
+    public void didUpdateData() {
+
+        TextView tick = (TextView) findViewById(R.id.tickValue);
+        TextView mtb1 = (TextView) findViewById(R.id.mtb1Value);
+        TextView mtb5 = (TextView) findViewById(R.id.mtb5Value);
+        TextView heel = (TextView) findViewById(R.id.heelValue);
+        TextView accX = (TextView) findViewById(R.id.accXValue);
+        TextView accY = (TextView) findViewById(R.id.accYValue);
+        TextView accZ = (TextView) findViewById(R.id.accZValue);
+
+        tick.setText(String.format("%d", anklet.tick));
+        mtb1.setText(String.format("%d", anklet.mtb1));
+        mtb5.setText(String.format("%d", anklet.mtb5));
+        heel.setText(String.format("%d", anklet.heel));
+        accX.setText(String.format("%f", anklet.accX));
+        accY.setText(String.format("%f", anklet.accY));
+        accZ.setText(String.format("%f", anklet.accZ));
     }
 }
