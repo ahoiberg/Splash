@@ -2,11 +2,46 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\classes.jar"
+        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-5f84bc17363ae63d9e48b7908db66a4b7ec179f6.jar" />
+    </item>
+    <item
+        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-33086333267e78a9571d64810486edabe05af852.jar" />
+    </item>
+    <item
+        jar="/Users/andrewhoiberg/Documents/workspace/adt-bundle-mac-x86_64-20140702 4/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-71fb1de5a4a0f964ddfc23326519d757df2d8084.jar" />
+    </item>
+    <item
+        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-cb3499443b318bec9ceb930d402a39e3eead864c.jar" />
+    </item>
+    <item
+        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/thirsty_bro/sensorialibrary/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b7f231f603ea1076b68e0e65892c1abfad162c72">
+        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-779e67b093658b88f41000a179b5ebbaf4d98ffa.jar" />
+    </item>
+    <item
+        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
-        <dex dex="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\pre-dexed\debug\classes-7c658cc0b19063302963d0ce3c7ffdcdc8ce9314.jar" />
+        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-c8afb07d405292b7ddca19a84d890bd7a9264d1b.jar" />
     </item>
 
 </items>
