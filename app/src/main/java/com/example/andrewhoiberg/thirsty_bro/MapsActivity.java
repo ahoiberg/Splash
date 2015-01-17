@@ -6,10 +6,14 @@ import android.content.Context;
 import android.location.Location;
 import android.location.LocationManager;
 import android.location.LocationListener;
+
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+
+import com.google.android.gms.maps.MapView;
 
 public class MapsActivity extends FragmentActivity {
 
@@ -26,6 +30,8 @@ public class MapsActivity extends FragmentActivity {
     protected void onResume() {
         super.onResume();
         setUpMapIfNeeded();
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+
     }
 
     /**
@@ -66,11 +72,15 @@ public class MapsActivity extends FragmentActivity {
         mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
     }
 
+    public void makeUseOfNewLocation(Location location) {
+
+    }
+
     // Acquire a reference to the system Location Manager
     LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
     // Define a listener that responds to location updates
-    LocationListener locationListener = new LocationListener() {
+    public LocationListener locationListener = new LocationListener() {
         public void onLocationChanged(Location location) {
             // Called when a new location is found by the network location provider.
             makeUseOfNewLocation(location);
@@ -81,10 +91,7 @@ public class MapsActivity extends FragmentActivity {
         public void onProviderEnabled(String provider) {}
 
         public void onProviderDisabled(String provider) {}
+
     };
-
-// Register the listener with the Location Manager to receive location updates
-    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
-
 
 }
