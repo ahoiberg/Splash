@@ -95,8 +95,8 @@ public class UserSettingsActivity extends ActionBarActivity {
         SharedPreferences settings = getSharedPreferences(UserPreferences.PREFS_NAME, 0);
         if(settings.getInt("age",-1)!=-1)setStringSetting(R.id.AgeYr,settings.getInt("age",0));
         if(settings.getInt("weight",-1)!=-1)setStringSetting(R.id.WeightLb,settings.getInt("weight",0));
-        if(settings.getInt("height",-1)!=-1)setStringSetting(R.id.HeightFt,settings.getInt("height",0)%12);
-        if(settings.getInt("height",-1)!=-1)setStringSetting(R.id.HeightIn,settings.getInt("height",0)/12);
+        if(settings.getInt("height",-1)!=-1)setStringSetting(R.id.HeightFt,settings.getInt("height",0)/12);
+        if(settings.getInt("height",-1)!=-1)setStringSetting(R.id.HeightIn,settings.getInt("height",0)%12);
 
         ((RadioButton)findViewById(R.id.GenderMale)).setChecked(settings.getBoolean("isMale",true));
         ((RadioButton)findViewById(R.id.GenderFemale)).setChecked(!settings.getBoolean("isMale",false));
