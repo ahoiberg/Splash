@@ -22,6 +22,7 @@ import java.net.URL;
 
 public class MapsActivity extends FragmentActivity {
 
+    long lastPoll = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,11 @@ public class MapsActivity extends FragmentActivity {
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,locationListener);
 
     }
+
+    protected int getMin(){
+        return ((int)(System.currentTimeMillis()/1000/60));
+    }
+
     // Acquire a reference to the system Location Manager
     LocationManager  locationManager = null;
 
@@ -45,6 +51,14 @@ public class MapsActivity extends FragmentActivity {
     public LocationListener locationListener = new LocationListener() {
         public void onLocationChanged(Location slocation) {
             Log.v("TB",slocation.getLatitude()+" | "+slocation.getLongitude());
+            if(getMin()==lastPoll){
+                Log.v("TB","TOO RECENT");
+                return;
+            }else{
+                Log.v("TB","TIME FINE");
+            }
+            lastPoll = getMin();
+
             final Location location = slocation;
             Thread thread = new Thread() {
                 public void run() {

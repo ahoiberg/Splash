@@ -150,9 +150,9 @@ public class BeforeRunActivity extends MapsActivity {
         protected void onPostExecute(Long l){
             ((TextView) findViewById(R.id.locationValue)).setText(a.weatherData.getLocation());
             ((TextView) findViewById(R.id.humidityValue)).setText(a.weatherData.getHumidity());
-            ((TextView) findViewById(R.id.temperatureValue)).setText(a.weatherData.getTemperatureF()+" F");
-            ((TextView) findViewById(R.id.precipitationValue)).setText(a.weatherData.getPrecipitationHrIn()+" Hr/In");
-            ((TextView) findViewById(R.id.windspeedValue)).setText(a.weatherData.getWindDescription());
+            ((TextView) findViewById(R.id.temperatureValue)).setText(Math.floor(a.weatherData.getTemperatureF()*10)/10+" F");
+            ((TextView) findViewById(R.id.precipitationValue)).setText(a.weatherData.getPrecipitationHrIn()+" In/Hr");
+            ((TextView) findViewById(R.id.windspeedValue)).setText(Math.floor(a.weatherData.getWindSpeed()*10)/10+" mph");
 
 
             ((ImageView) findViewById(R.id.weatherIcon)).setImageBitmap(a.weatherIcon);

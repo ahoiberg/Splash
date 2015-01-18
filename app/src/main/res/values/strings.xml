@@ -2,7 +2,7 @@
 <resources>
 
     <string name="google_maps_key" templateMergeStrategy="preserve">AIzaSyA55qePnucPuWGf1l9FZ5gmR4xDXLzjqKQ</string>
-    <string name="app_name">Thirsty Bro</string>
+    <string name="app_name">Splash</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">User Settings</string>
     <string name="title_activity_user_settings">User Settings</string>
