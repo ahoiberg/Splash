@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <items version="2" >
 
-    <item
-        jar="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\signalprocessing-native-libs\signalprocessing-native-libs.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1ed6096e0ef10c3f181bb1d403769c497e0ad513">
-        <dex dex="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\pre-dexed\debug\signalprocessing-native-libs-974ea782a09f08686522091f67dc8d9f65dabb3c.jar" />
-    </item>
-    <item
-        jar="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\signalprocessing\signalprocessing.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="5da55e1db34a6ec8545174a42b4e5410081e87aa">
-        <dex dex="C:\Users\Martin\Dropbox\androidstudio\thirsty_bro\app\build\intermediates\pre-dexed\debug\signalprocessing-cb14ee5af4fac1528b7ad05475dbc89f1cb09db6.jar" />
-    </item>
-
-</items>
-=======
-<items version="2" >
-
-    <item
-        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-cb3499443b318bec9ceb930d402a39e3eead864c.jar" />
-    </item>
     <item
         jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
@@ -36,40 +9,10 @@
         <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-5f84bc17363ae63d9e48b7908db66a4b7ec179f6.jar" />
     </item>
     <item
-<<<<<<< HEAD
-        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/thirsty_bro/sensorialibrary/unspecified/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e3a7a20c01e307c452d0b56a24c22c456f52bd00">
-        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-779e67b093658b88f41000a179b5ebbaf4d98ffa.jar" />
-    </item>
-    <item
-        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
-        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-c8afb07d405292b7ddca19a84d890bd7a9264d1b.jar" />
-=======
-        jar="/Users/test/Desktop/Git/thirsty_bro/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
-        <dex dex="/Users/test/Desktop/Git/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-b57dc682be608e6e9301fcd080d9c8727ebfce15.jar" />
-    </item>
-    <item
-        jar="/Users/test/Desktop/Git/thirsty_bro/app/build/intermediates/exploded-aar/thirsty_bro/sensorialibrary/unspecified/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="8608107ef9506b46372050dc0b148039946c7c52">
-        <dex dex="/Users/test/Desktop/Git/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-2c7029e382e1e85d6cb6e72a7dd0d48ce9b3c1e8.jar" />
->>>>>>> FETCH_HEAD
-    </item>
-    <item
-        jar="/Users/test/Desktop/Git/thirsty_bro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-<<<<<<< HEAD
         <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-33086333267e78a9571d64810486edabe05af852.jar" />
     </item>
     <item
@@ -78,10 +21,41 @@
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
         <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-71fb1de5a4a0f964ddfc23326519d757df2d8084.jar" />
-=======
-        <dex dex="/Users/test/Desktop/Git/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-fe879b298bfafd86986c4bb1c6be34ed4923009b.jar" />
->>>>>>> FETCH_HEAD
+    </item>
+    <item
+        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/signalprocessing-native-libs/signalprocessing-native-libs.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1ed6096e0ef10c3f181bb1d403769c497e0ad513">
+        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/signalprocessing-native-libs-d90cb14fc1f8cb23a7b11c5a2d7ea8bec926c61c.jar" />
+    </item>
+    <item
+        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-cb3499443b318bec9ceb930d402a39e3eead864c.jar" />
+    </item>
+    <item
+        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/thirsty_bro/sensorialibrary/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e6ad447d13ebf8592d13b85252ec75cd94c83bcb">
+        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-779e67b093658b88f41000a179b5ebbaf4d98ffa.jar" />
+    </item>
+    <item
+        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/classes-c8afb07d405292b7ddca19a84d890bd7a9264d1b.jar" />
+    </item>
+    <item
+        jar="/Users/andrewhoiberg/GitHub/thirsty_bro/signalprocessing/signalprocessing.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5da55e1db34a6ec8545174a42b4e5410081e87aa">
+        <dex dex="/Users/andrewhoiberg/GitHub/thirsty_bro/app/build/intermediates/pre-dexed/debug/signalprocessing-6af4bffe62180db0bfd79dec5096c48f989b21a7.jar" />
     </item>
 
 </items>
->>>>>>> 88cc6a5b9914a9d396b85894567509c0884ebb92

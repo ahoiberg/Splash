@@ -6,6 +6,7 @@ public class WeatherInfo {
 	private String humidity;//percentage
 	private String iconURL;//url for icon
 	private String windDescription;//wind mph and direction description
+    private double windSpeed; //wind mph
 	private double temperatureF;// in Fahrenheit
 	private String elevationFT;//
 	private float precipitationHrIn;//precipitation within one hour in inches
@@ -29,6 +30,12 @@ public class WeatherInfo {
 	public void setWindDescription(String windDescription) {
 		this.windDescription = windDescription;
 	}
+    public double getWindSpeed() {
+        return windSpeed;
+    }
+    public void setWindSpeed(double windSpeed) {
+        this.windSpeed = windSpeed;
+    }
 	public double getTemperatureF() {
 		return temperatureF;
 	}
@@ -56,6 +63,8 @@ public class WeatherInfo {
 		builder.append(iconURL);
 		builder.append(", windDescription=");
 		builder.append(windDescription);
+        builder.append(", windSpeed=");
+        builder.append(windSpeed);
 		builder.append(", temperatureF=");
 		builder.append(temperatureF);
 		builder.append(", elevationFT=");

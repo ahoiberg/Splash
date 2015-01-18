@@ -24,6 +24,8 @@ public class WeatherInfoParser {
 		weather.setTemperatureF(temperatureF);
 		String windDescription = getWeatherParameter(json, "wind_string");
 		weather.setWindDescription(windDescription);
+        float windSpeed = Float.parseFloat(getWeatherParameter(json, "wind_mph"));
+        weather.setWindSpeed(windSpeed);
 		return weather;
 	}
 	
