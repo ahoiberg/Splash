@@ -1,10 +1,16 @@
-# thirsty_bro
+# Splash
+(sometimes referred to as thirsty_bro)
 measuring vital signs based off activity and environment
 
-If we develop this in android, everyone should get a good android IDE. Eclipse and Android Studio are both pretty good.
-If you don't have an android phone you can use an Android Virtual Device (AVD) 
+This extends the technology developed by Sensoria, Inc. 
+Developed during PennApps winter 2015
 
-http://www.vogella.com/tutorials/Android/article.html
-Is an overview of Android in eclipse. Part 9 tells you how to set up an AVD.
+Develops ways to measure the following while an individual is running (with Sensoria technology)
+Location
+Weather/Running Conditions
+Hydration state
+Signs of pronation
 
-IDK what else this should say
+NOTE: none of these calculations have any basis in empirical data. They are developed simply using logic for purposes of demonstration. 
+
+Weather/location info comes from WU Underground.
