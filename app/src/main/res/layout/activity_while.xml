@@ -3,14 +3,14 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".AfterRunActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".WhileRunActivity">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Good Job!"
+        android:text="Running..."
         android:id="@+id/textView"
         android:layout_gravity="left|top"
         android:layout_alignParentTop="true"
@@ -19,16 +19,17 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Return to Current Running Conditions"
+        android:text="Stop Running"
         android:id="@+id/beforeRun"
         android:onClick="onBeforeRun"
-        android:layout_below="@+id/ageValue" />
+        android:layout_below="@+id/pronationValue"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Age"
-        android:id="@+id/age"
+        android:text="Pronation"
+        android:id="@+id/pronation"
         android:layout_below="@+id/textView"
         android:layout_toLeftOf="@+id/textView"
         android:layout_toStartOf="@+id/textView" />
@@ -37,10 +38,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="0"
-        android:id="@+id/ageValue"
+        android:text="normal"
+        android:id="@+id/pronationValue"
         android:layout_below="@+id/textView"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        android:layout_alignRight="@+id/beforeRun"
+        android:layout_alignEnd="@+id/beforeRun" />
 
 </RelativeLayout>
