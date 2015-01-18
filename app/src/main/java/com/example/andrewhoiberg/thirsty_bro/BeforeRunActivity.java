@@ -80,6 +80,7 @@ public class BeforeRunActivity extends ActionBarActivity {
     public void callWeatherAPI(){
         String latitude = "37.252194";
         String longitude = "-121.360474";
+        //TODO pass coordinates here
         WeatherInfo weather = null;
         try {
             weather = WeatherProvider.getWeather(latitude, longitude);
@@ -124,14 +125,15 @@ public class BeforeRunActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            openUserSettings();
+            openConnectingActivity();
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    public void openUserSettings() {
-        this.startActivity(new Intent(this, UserSettingsActivity.class));
+    public void openConnectingActivity() {
+        this.startActivity(new Intent(this, ConnectingActivity.class));
+
     }
 
     //@Override

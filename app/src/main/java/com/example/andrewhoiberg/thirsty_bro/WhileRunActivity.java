@@ -24,7 +24,7 @@ import com.sensoria.sensorialibrary.SAFoundAnklet;
 /**
  * Created by test on 2015/01/17.
  */
-public class WhileRunActivity extends ActionBarActivity{
+public class WhileRunActivity extends ActionBarActivity {
     SAAnklet anklet;
 
     @Override
@@ -55,6 +55,156 @@ public class WhileRunActivity extends ActionBarActivity{
         //height.setText(String.format("%d", settings.getInt("height",-1)));
         //weight.setText(String.format("%d", settings.getInt("weight",0)));
         //gender.setText(settings.getBoolean("isMale",true)?"Male":"Female");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        anklet.pause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        anklet.disconnect();
+    }
+
+    public void onStartScan(View view) {
+        anklet.startScan();
+    }
+
+    public void onStopScan(View view) {
+        anklet.stopScan();
+    }
+
+    public void onConnect(View view) {
+
+        Log.w("SensoriaLibrary", "Connect to " + selectedCode + " " + selectedMac);
+        anklet.deviceCode = selectedCode;
+        anklet.deviceMac = selectedMac;
+        anklet.connect();
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            openUserSettings();
+        }
+
+        if (id == R.id.connect_settings) {
+            openConnectionSettings();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void openUserSettings(){
+        this.startActivity(new Intent(this,UserSettingsActivity.class));
+    }
+
+    final static int CONNECTION_REQUEST_CODE=1;
+    public void openConnectionSettings(){
+        this.startActivity(new Intent(this,ConnectingActivity.class));
+        Intent connectionSettingsIntent = new Intent(this,ConnectingActivity.class);
+        startActivityForResult(connectionSettingsIntent, CONNECTION_REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CONNECTION_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                // The user picked a contact.
+                // The Intent's data Uri identifies which contact was selected.
+
+                // Do something with the contact here (bigger example below)
+                SAAnklet anklet = ((AnkletPasser)data.getSerializableExtra("result")).anklet;
+                Log.d("TB","WORKS");
+
+            }
+        }
+    }
+
+    private String selectedCode;
+    private String selectedMac;
+
+    //@Override
+    public void didDiscoverDevice() {
+
+        Log.w("SensoriaLibrary", "Device Discovered!");
+
+        Spinner s = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, anklet.deviceDiscoveredList);
+        s.setAdapter(adapter);
+
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                SAFoundAnklet deviceDiscovered = anklet.deviceDiscoveredList.get(position);
+                selectedCode = deviceDiscovered.deviceCode;
+                selectedMac = deviceDiscovered.deviceMac;
+
+                Log.d("SensoriaLibrary", selectedCode + " " + selectedMac);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                selectedCode = null;
+            }
+        });
+    }
+
+    //@Override
+    public void didConnect() {
+
+        Log.w("SensoriaLibrary", "Device Connected!");
+
+    }
+
+   //@Override
+    public void didError(String message) {
+
+        Log.e("SensoriaLibrary", message);
+
+    }
+
+    //@Override
+    public void didUpdateData() {
+
+        TextView tick = (TextView) findViewById(R.id.tickValue);
+        TextView mtb1 = (TextView) findViewById(R.id.mtb1Value);
+        TextView mtb5 = (TextView) findViewById(R.id.mtb5Value);
+        TextView heel = (TextView) findViewById(R.id.heelValue);
+        TextView accX = (TextView) findViewById(R.id.accXValue);
+        TextView accY = (TextView) findViewById(R.id.accYValue);
+        TextView accZ = (TextView) findViewById(R.id.accZValue);
+
+
+        tick.setText(String.format("%d", anklet.tick));
+        mtb1.setText(String.format("%d", anklet.mtb1));
+        mtb5.setText(String.format("%d", anklet.mtb5));
+        heel.setText(String.format("%d", anklet.heel));
+        accX.setText(String.format("%f", anklet.accX));
+        accY.setText(String.format("%f", anklet.accY));
+        accZ.setText(String.format("%f", anklet.accZ));
+
     }
 
 }

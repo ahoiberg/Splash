@@ -92,7 +92,7 @@ public class ConnectingActivity extends ActionBarActivity implements SAAnkletInt
     }
 
     public void openUserSettings(){
-        this.startActivity(new Intent(this,UserSettingsActivity.class));
+        this.startActivity(new Intent(this,MainActivity.class));
     }
 
     private String selectedCode;

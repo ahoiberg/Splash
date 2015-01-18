@@ -13,7 +13,7 @@
     </style>
 
     <style name="button" parent="android:style/Widget.Button">
-
+        <item name="android:color">@color/background</item>
         <item name="android:background">@drawable/button</item>
         <item name="android:layout_width" >fill_parent</item>
         <item name="android:layout_height" >wrap_content</item>
