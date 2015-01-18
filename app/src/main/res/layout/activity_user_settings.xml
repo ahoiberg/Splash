@@ -25,6 +25,7 @@
                 android:id="@+id/WeightLb"
                 android:layout_height="wrap_content"
                 android:hint="@string/user_settings_weight_lb"
+                android:textColor="#FF0000"
                 android:inputType="numberSigned"
                 android:layout_width="fill_parent">
             </EditText>
@@ -44,6 +45,7 @@
                 android:id="@+id/HeightFt"
                 android:layout_height="wrap_content"
                 android:hint="@string/user_settings_height_ft"
+                android:textColor="#FFFFFF"
                 android:inputType="numberSigned"
                 android:layout_width="wrap_content">
             </EditText>
@@ -51,6 +53,7 @@
                 android:id="@+id/HeightIn"
                 android:layout_height="wrap_content"
                 android:hint="@string/user_settings_height_in"
+                android:textColor="#FFFFFF"
                 android:inputType="numberSigned"
                 android:layout_width="wrap_content">
             </EditText>
@@ -70,6 +73,7 @@
                 android:id="@+id/AgeYr"
                 android:layout_height="wrap_content"
                 android:hint="@string/user_settings_age_yr"
+                android:textColor="#FFFFFF"
                 android:inputType="numberSigned"
                 android:layout_width="fill_parent">
             </EditText>
@@ -93,11 +97,13 @@
                 <RadioButton android:id="@+id/GenderMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
                     android:text="@string/user_settings_gender_male"
                     />
                 <RadioButton android:id="@+id/GenderFemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
                     android:text="@string/user_settings_gender_female"
                     />
             </RadioGroup>

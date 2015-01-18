@@ -3,6 +3,9 @@ package com.example.andrewhoiberg.thirsty_bro;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,6 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -27,13 +31,17 @@ import com.sensoria.sensorialibrary.SAFoundAnklet;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * Created by test on 2015/01/17.
  */
-public class BeforeRunActivity extends ActionBarActivity {
+public class BeforeRunActivity extends MapsActivity {
     SAAnklet anklet;
     final static int CONNECTION_REQUEST_CODE=1;
+    WeatherInfo weatherData=null;
+    Bitmap weatherIcon = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +50,19 @@ public class BeforeRunActivity extends ActionBarActivity {
     }
 
     @Override
+    public void useWeatherData(WeatherInfo weather,Bitmap weatherIcon){
+        weatherData=weather;
+        this.weatherIcon = weatherIcon;
+        Log.d("TB","GOT WEATHER DATA");
+    }
+
+
+    @Override
     protected void onResume() {
         super.onResume();
         displayUserPreferences();
         displayConnection();
+        new WeatherTask().execute(this);
     }
 
     public void displayConnection(){
@@ -60,19 +77,10 @@ public class BeforeRunActivity extends ActionBarActivity {
         //TextView precipitation = (TextView) findViewById(R.id.precipitationValue);
         //TextView windspeed = (TextView) findViewById(R.id.windspeedValue);
         //TextView runningcondition = (TextView) findViewById(R.id.runningconditionValue);
-/*
-        SharedPreferences settings = getSharedPreferences(UserPreferences.PREFS_NAME, 0);
-        final  BeforeRunActivity s= this;
-        Thread weatherThread = new Thread(){
-          @Override
-            public void run(){
-              s.callWeatherAPI();
-          }
-        };
-        weatherThread.start();
 
-        age.setText(String.format("%d", settings.getInt("age",0)));
-        */
+
+        //age.setText(String.format("%d", settings.getInt("age",0)));
+
         //height.setText(String.format("%d", settings.getInt("height",-1)));
         //weight.setText(String.format("%d", settings.getInt("weight",0)));
         //gender.setText(settings.getBoolean("isMale",true)?"Male":"Female");
@@ -90,6 +98,10 @@ public class BeforeRunActivity extends ActionBarActivity {
     protected void onStop() {
         super.onStop();
 
+    }
+
+    public void onUserSettings(View view){
+        startActivity(new Intent(this, UserSettingsActivity.class));
     }
 
     public void onConnect(View view) {
@@ -124,26 +136,29 @@ public class BeforeRunActivity extends ActionBarActivity {
 
     }
 
-    //@Override
-    //public void didUpdateData() {
+    private class WeatherTask extends AsyncTask<BeforeRunActivity, Integer, Long> {
+        BeforeRunActivity a=null;
+        protected Long doInBackground(BeforeRunActivity... activities) {
+            a = activities[0];
+            while(a.weatherData==null){
 
-        //TextView tick = (TextView) findViewById(R.id.tickValue);
-        //TextView mtb1 = (TextView) findViewById(R.id.mtb1Value);
-        //TextView mtb5 = (TextView) findViewById(R.id.mtb5Value);
-        //TextView heel = (TextView) findViewById(R.id.heelValue);
-        //TextView accX = (TextView) findViewById(R.id.accXValue);
-        //TextView accY = (TextView) findViewById(R.id.accYValue);
-        //TextView accZ = (TextView) findViewById(R.id.accZValue);
+            }
+            return 1L;
+        }
+
+        @Override
+        protected void onPostExecute(Long l){
+            ((TextView) findViewById(R.id.locationValue)).setText(a.weatherData.getLocation());
+            ((TextView) findViewById(R.id.humidityValue)).setText(a.weatherData.getHumidity());
+            ((TextView) findViewById(R.id.temperatureValue)).setText(a.weatherData.getTemperatureF()+" F");
+            ((TextView) findViewById(R.id.precipitationValue)).setText(a.weatherData.getPrecipitationHrIn()+" Hr/In");
+            ((TextView) findViewById(R.id.windspeedValue)).setText(a.weatherData.getWindDescription());
 
 
-        //tick.setText(String.format("%d", anklet.tick));
-        //mtb1.setText(String.format("%d", anklet.mtb1));
-        //mtb5.setText(String.format("%d", anklet.mtb5));
-        //heel.setText(String.format("%d", anklet.heel));
-        //accX.setText(String.format("%f", anklet.accX));
-        //accY.setText(String.format("%f", anklet.accY));
-        //accZ.setText(String.format("%f", anklet.accZ));
+            ((ImageView) findViewById(R.id.weatherIcon)).setImageBitmap(a.weatherIcon);
 
-    //}
+        }
 
+    }
 }
+

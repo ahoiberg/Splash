@@ -7,7 +7,7 @@
     <item android:id="@+id/connect_settings" android:title="@string/connect_settings"
         android:orderInCategory="100" app:showAsAction="never"
         />
-    <item android:id="@+id/before_run" android:title="@string/before_run"
+    <item android:id="@+id/before_run" android:title="Current Running Condition"
         android:orderInCategory="100" app:showAsAction="never"
         />
 </menu>

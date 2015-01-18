@@ -12,7 +12,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Good Job!"
         android:id="@+id/textView"
-        android:layout_gravity="left|top" />
+        android:layout_gravity="left|top"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -28,7 +30,8 @@
         android:text="Age"
         android:id="@+id/age"
         android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true" />
+        android:layout_toLeftOf="@+id/textView"
+        android:layout_toStartOf="@+id/textView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,6 +40,7 @@
         android:text="0"
         android:id="@+id/ageValue"
         android:layout_below="@+id/textView"
-        android:layout_alignEnd="@+id/beforeRun" />
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView" />
 
 </RelativeLayout>

@@ -138,12 +138,12 @@ public class ConnectingActivity extends ActionBarActivity implements SAAnkletInt
 
         AnkletPasser.anklet = anklet;
 
-        openBeforeRunActivity();
+        openWhileRunActivity();
 
     }
 
-    public void openBeforeRunActivity(){
-        this.startActivity(new Intent(this,BeforeRunActivity.class));
+    public void openWhileRunActivity(){
+        this.startActivity(new Intent(this,WhileRunActivity.class));
     }
 
 

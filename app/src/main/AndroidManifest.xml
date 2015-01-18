@@ -59,13 +59,14 @@
             android:label="@string/title_activity_connecting" >
         </activity>
         <activity
-            android:name=".AfterRunActivity"
-            android:label="@string/title_activity_before_run" >
+            android:name=".WhileRunActivity"
+            android:label="@string/title_activity_while_run" >
         </activity>
         <activity
-            android:name=".WhileRunActivity"
-            android:label="@string/title_activity_before_run" >
+            android:name=".AfterRunActivity"
+            android:label="@string/title_activity_after_run" >
         </activity>
+
     </application>
 
 </manifest>
