@@ -10,17 +10,31 @@ public class WeatherProvider {
 	private static String FORMAT = "json";
 	private static String WEATHER_SERVICE_ADDRESS = "http://api.wunderground.com/api/";
 
-	
-	
-	public static WeatherInfo getWeather(String latitude, String longitude)
-			throws IOException, JSONException {
-		String weatherURLString = createWeatherURL(WEATHER_SERVICE_ADDRESS,
-				API_KEY, latitude, longitude, FORMAT);
+    /*
+    public void callWeatherAPI(){
+        String latitude = "37.252194";
+        String longitude = "-121.360474";
+        //TODO pass coordinates here
+        WeatherInfo weather = null;
 
-		JSONObject json = JSONReader.readJsonFromUrl(weatherURLString);
+        Log.d("TB",weather.toString());
+    }*/
+	
+	public static WeatherInfo getWeather(String latitude, String longitude){
+        try {
+            String weatherURLString = createWeatherURL(WEATHER_SERVICE_ADDRESS,
+                    API_KEY, latitude, longitude, FORMAT);
 
-		WeatherInfo weather = WeatherInfoParser.getWeatherInfo(json);
-		return weather;
+            JSONObject json = JSONReader.readJsonFromUrl(weatherURLString);
+
+            WeatherInfo weather = WeatherInfoParser.getWeatherInfo(json);
+            return weather;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+		return null;
 	}
 
 	/**

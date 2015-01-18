@@ -7,6 +7,8 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.location.LocationListener;
 import android.content.Intent;
+import android.util.Log;
+
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -30,6 +32,7 @@ public class MapsActivity extends FragmentActivity {
     protected void onResume() {
         super.onResume();
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0,0,locationListener);
         setUpMapIfNeeded();
     }
 
@@ -94,15 +97,28 @@ public class MapsActivity extends FragmentActivity {
     public LocationListener locationListener = new LocationListener() {
         public void onLocationChanged(Location location) {
             // Called when a new location is found by the network location provider.
+            Log.d("TB", "Location update");
+            Log.d("TB",""+location.getAltitude());
+            Log.d("TB",""+location.getLongitude());
+            Log.d("TB",""+location.getLatitude());
+            Log.d("TB",""+location.getAccuracy());
+            Log.d("TB",""+location.getProvider());
+            Log.d("TB",""+location.getBearing());
             makeUseOfNewLocation(location);
         }
 
 
-        public void onStatusChanged(String provider, int status, Bundle extras) {}
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+            Log.d("TB", "Change");
+        }
 
-        public void onProviderEnabled(String provider) {}
+        public void onProviderEnabled(String provider) {
+            Log.d("TB", "Ena");
+        }
 
-        public void onProviderDisabled(String provider) {}
+        public void onProviderDisabled(String provider) {
+            Log.d("TB", "Dis");
+        }
 
     };
 

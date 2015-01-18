@@ -60,7 +60,7 @@ public class BeforeRunActivity extends ActionBarActivity {
         //TextView precipitation = (TextView) findViewById(R.id.precipitationValue);
         //TextView windspeed = (TextView) findViewById(R.id.windspeedValue);
         //TextView runningcondition = (TextView) findViewById(R.id.runningconditionValue);
-
+/*
         SharedPreferences settings = getSharedPreferences(UserPreferences.PREFS_NAME, 0);
         final  BeforeRunActivity s= this;
         Thread weatherThread = new Thread(){
@@ -72,25 +72,13 @@ public class BeforeRunActivity extends ActionBarActivity {
         weatherThread.start();
 
         age.setText(String.format("%d", settings.getInt("age",0)));
+        */
         //height.setText(String.format("%d", settings.getInt("height",-1)));
         //weight.setText(String.format("%d", settings.getInt("weight",0)));
         //gender.setText(settings.getBoolean("isMale",true)?"Male":"Female");
     }
 
-    public void callWeatherAPI(){
-        String latitude = "37.252194";
-        String longitude = "-121.360474";
-        //TODO pass coordinates here
-        WeatherInfo weather = null;
-        try {
-            weather = WeatherProvider.getWeather(latitude, longitude);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        Log.d("TB",weather.toString());
-    }
+
 
     @Override
     protected void onPause() {
@@ -112,7 +100,7 @@ public class BeforeRunActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 

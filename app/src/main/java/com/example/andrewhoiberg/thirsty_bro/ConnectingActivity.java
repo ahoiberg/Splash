@@ -66,13 +66,16 @@ public class ConnectingActivity extends ActionBarActivity implements SAAnkletInt
         anklet.deviceCode = selectedCode;
         anklet.deviceMac = selectedMac;
         anklet.connect();
+
+        Toast.makeText(this,"Connecting...", Toast.LENGTH_LONG);
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -92,7 +95,7 @@ public class ConnectingActivity extends ActionBarActivity implements SAAnkletInt
     }
 
     public void openUserSettings(){
-        this.startActivity(new Intent(this,MainActivity.class));
+        this.startActivity(new Intent(this,WhileRunActivity.class));
     }
 
     private String selectedCode;
@@ -130,6 +133,8 @@ public class ConnectingActivity extends ActionBarActivity implements SAAnkletInt
     public void didConnect() {
 
         Log.w("SensoriaLibrary", "Device Connected!");
+
+        Toast.makeText(this,"Device Connected!.", Toast.LENGTH_LONG);
 
         AnkletPasser.anklet = anklet;
 
