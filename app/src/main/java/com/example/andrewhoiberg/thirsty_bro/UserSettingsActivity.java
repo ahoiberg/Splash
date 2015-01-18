@@ -86,7 +86,7 @@ public class UserSettingsActivity extends ActionBarActivity {
 
         editor.commit();
 
-        openMainActivity();
+        openMapActivity();
 
     }
 
@@ -105,8 +105,8 @@ public class UserSettingsActivity extends ActionBarActivity {
     }
 
 
-    public void openMainActivity(){
-        this.startActivity(new Intent(this,MainActivity.class));
+    public void openMapActivity(){
+        this.startActivity(new Intent(this, MapsActivity.class));
     }
 
 

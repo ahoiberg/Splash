@@ -119,14 +119,15 @@ public class BeforeRunActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            openUserSettings();
+            openConnectingActivity();
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    public void openUserSettings() {
-        this.startActivity(new Intent(this, UserSettingsActivity.class));
+    public void openConnectingActivity() {
+        this.startActivity(new Intent(this, ConnectingActivity.class));
+
     }
 
     //@Override

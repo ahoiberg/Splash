@@ -6,14 +6,11 @@ import android.content.Context;
 import android.location.Location;
 import android.location.LocationManager;
 import android.location.LocationListener;
-
+import android.content.Intent;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-
-import com.google.android.gms.maps.MapView;
 
 public class MapsActivity extends FragmentActivity {
 
@@ -22,8 +19,10 @@ public class MapsActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.example.andrewhoiberg.thirsty_bro.R.layout.activity_maps);
+        setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
+
+
     }
 
     @Override
@@ -32,6 +31,11 @@ public class MapsActivity extends FragmentActivity {
         setUpMapIfNeeded();
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
 
+
+    }
+
+    public void SendLocation() {
+    this.startActivity(new Intent(this, BeforeRunActivity.class));
     }
 
     /**
@@ -74,6 +78,8 @@ public class MapsActivity extends FragmentActivity {
 
     public void makeUseOfNewLocation(Location location) {
 
+        SendLocation();
+
     }
 
     // Acquire a reference to the system Location Manager
@@ -83,8 +89,8 @@ public class MapsActivity extends FragmentActivity {
     public LocationListener locationListener = new LocationListener() {
         public void onLocationChanged(Location location) {
             // Called when a new location is found by the network location provider.
-         //   makeUseOfNewLocation(location);
-            //TODO use intent to pass this location to BeforeRunActivity.java
+            makeUseOfNewLocation(location);
+
         }
 
         public void onStatusChanged(String provider, int status, Bundle extras) {}
