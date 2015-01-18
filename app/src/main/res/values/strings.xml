@@ -17,6 +17,8 @@
     <string name="user_settings_gender_female">Female</string>
     <string name="user_settings_save">Save</string>
     <string name="title_activity_connecting">Connect to Sensoria</string>
+    <string name="title_activity_before_run">Connect to Sensoria</string>
+    <string name="before_run">Connect to Sensoria</string>
     <string name="connect_settings">Connect to Sensoria</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

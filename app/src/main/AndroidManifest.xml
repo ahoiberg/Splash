@@ -51,6 +51,10 @@
             android:name=".ConnectingActivity"
             android:label="@string/title_activity_connecting" >
         </activity>
+        <activity
+            android:name=".AfterRunActivity"
+            android:label="@string/title_activity_before_run" >
+        </activity>
     </application>
 
 </manifest>
