@@ -1,4 +1,4 @@
-package com.example.andrewhoiberg.thirsty_bro.com.thirsty_bro.weather;
+package com.example.andrewhoiberg.thirsty_bro;
 
 
 public class WeatherInfo {

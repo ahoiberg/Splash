@@ -23,6 +23,10 @@ import com.sensoria.sensorialibrary.SAAnklet;
 import com.sensoria.sensorialibrary.SAAnkletInterface;
 import com.sensoria.sensorialibrary.SAFoundAnklet;
 
+import org.json.JSONException;
+
+import java.io.IOException;
+
 /**
  * Created by test on 2015/01/17.
  */
@@ -52,11 +56,34 @@ public class BeforeRunActivity extends ActionBarActivity {
         //TextView runningcondition = (TextView) findViewById(R.id.runningconditionValue);
 
         SharedPreferences settings = getSharedPreferences(UserPreferences.PREFS_NAME, 0);
+        final  BeforeRunActivity s= this;
+        Thread weatherThread = new Thread(){
+          @Override
+            public void run(){
+              s.callWeatherAPI();
+          }
+        };
+        weatherThread.start();
 
         age.setText(String.format("%d", settings.getInt("age",0)));
         //height.setText(String.format("%d", settings.getInt("height",-1)));
         //weight.setText(String.format("%d", settings.getInt("weight",0)));
         //gender.setText(settings.getBoolean("isMale",true)?"Male":"Female");
+    }
+
+    public void callWeatherAPI(){
+        String latitude = "37.252194";
+        String longitude = "-121.360474";
+        //TODO pass coordinates here
+        WeatherInfo weather = null;
+        try {
+            weather = WeatherProvider.getWeather(latitude, longitude);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Log.d("TB",weather.toString());
     }
 
     @Override
@@ -72,8 +99,7 @@ public class BeforeRunActivity extends ActionBarActivity {
     }
 
     public void onConnect(View view) {
-        Intent connectionSettingsIntent = new Intent(this,ConnectingActivity.class);
-        startActivityForResult(connectionSettingsIntent, CONNECTION_REQUEST_CODE);
+        startActivity(new Intent(this, ConnectingActivity.class));
     }
 
 

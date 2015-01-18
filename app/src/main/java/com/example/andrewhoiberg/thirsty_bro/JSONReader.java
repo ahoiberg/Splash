@@ -1,4 +1,4 @@
-package com.example.andrewhoiberg.thirsty_bro.com.thirsty_bro.json;
+package com.example.andrewhoiberg.thirsty_bro;
 
 /**
  * Created by adri.vazquez on 1/17/15.

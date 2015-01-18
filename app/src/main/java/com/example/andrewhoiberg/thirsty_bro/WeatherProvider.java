@@ -1,11 +1,9 @@
-package com.example.andrewhoiberg.thirsty_bro.com.thirsty_bro.weather;
+package com.example.andrewhoiberg.thirsty_bro;
 
 import java.io.IOException;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.thirsty_bro.json.JSONReader;
 
 public class WeatherProvider {
 	private static String API_KEY = "62e4fdba1393b11a";

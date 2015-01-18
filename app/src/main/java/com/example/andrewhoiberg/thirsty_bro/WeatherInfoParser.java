@@ -1,4 +1,4 @@
-package com.example.andrewhoiberg.thirsty_bro.com.thirsty_bro.weather;
+package com.example.andrewhoiberg.thirsty_bro;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,10 +34,4 @@ public class WeatherInfoParser {
 	}
 
 
-    public static void main(String[] args) throws IOException, JSONException {
-        String latitude = "37.252194";
-        String longitude = "-121.360474";
-        WeatherInfo weather = WeatherProvider.getWeather(latitude, longitude);
-        System.out.println(weather);
-    }
 }
