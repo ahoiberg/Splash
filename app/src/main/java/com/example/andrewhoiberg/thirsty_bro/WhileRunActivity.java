@@ -27,7 +27,7 @@ import com.sensoria.sensorialibrary.SAFoundAnklet;
 /**
  * Created by test on 2015/01/17.
  */
-public class WhileRunActivity extends ActionBarActivity implements SAAnkletInterface {
+public class WhileRunActivity extends ActionBarActivity {
     SAAnklet anklet;
     SignalProcessing signalProcessing;
 
@@ -35,8 +35,6 @@ public class WhileRunActivity extends ActionBarActivity implements SAAnkletInter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_while);
-
-        anklet = new SAAnklet(this);
         signalProcessing = new SignalProcessing();
 
     }
@@ -44,7 +42,6 @@ public class WhileRunActivity extends ActionBarActivity implements SAAnkletInter
     @Override
     protected void onResume() {
         super.onResume();
-        anklet.resume();
         displayUserPreferences();
     }
 
@@ -67,33 +64,16 @@ public class WhileRunActivity extends ActionBarActivity implements SAAnkletInter
     @Override
     protected void onPause() {
         super.onPause();
-
-        anklet.pause();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-
-        anklet.disconnect();
     }
 
-    public void onStartScan(View view) {
-        anklet.startScan();
+    public void onAfter(View view) {
+        startActivity(new Intent(this, AfterRunActivity.class));
     }
-
-    public void onStopScan(View view) {
-        anklet.stopScan();
-    }
-
-    public void onConnect(View view) {
-
-        Log.w("SensoriaLibrary", "Connect to " + selectedCode + " " + selectedMac);
-        anklet.deviceCode = selectedCode;
-        anklet.deviceMac = selectedMac;
-        anklet.connect();
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -138,66 +118,6 @@ public class WhileRunActivity extends ActionBarActivity implements SAAnkletInter
         this.startActivity(new Intent(this,ConnectingActivity.class));
         Intent connectionSettingsIntent = new Intent(this,ConnectingActivity.class);
         startActivityForResult(connectionSettingsIntent, CONNECTION_REQUEST_CODE);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == CONNECTION_REQUEST_CODE) {
-            if (resultCode == RESULT_OK) {
-                // The user picked a contact.
-                // The Intent's data Uri identifies which contact was selected.
-
-                // Do something with the contact here (bigger example below)
-                SAAnklet anklet = ((AnkletPasser)data.getSerializableExtra("result")).anklet;
-                Log.d("TB","WORKS");
-
-            }
-        }
-    }
-
-    private String selectedCode;
-    private String selectedMac;
-
-    //@Override
-    public void didDiscoverDevice() {
-
-        Log.w("SensoriaLibrary", "Device Discovered!");
-
-        Spinner s = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, anklet.deviceDiscoveredList);
-        s.setAdapter(adapter);
-
-        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-            {
-                SAFoundAnklet deviceDiscovered = anklet.deviceDiscoveredList.get(position);
-                selectedCode = deviceDiscovered.deviceCode;
-                selectedMac = deviceDiscovered.deviceMac;
-
-                Log.d("SensoriaLibrary", selectedCode + " " + selectedMac);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                selectedCode = null;
-            }
-        });
-    }
-
-    //@Override
-    public void didConnect() {
-
-        Log.w("SensoriaLibrary", "Device Connected!");
-
-    }
-
-   //@Override
-    public void didError(String message) {
-
-        Log.e("SensoriaLibrary", message);
-
     }
 
     //@Override
