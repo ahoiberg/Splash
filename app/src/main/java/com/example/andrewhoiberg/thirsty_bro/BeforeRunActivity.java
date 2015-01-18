@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -44,8 +45,13 @@ public class BeforeRunActivity extends ActionBarActivity {
     protected void onResume() {
         super.onResume();
         displayUserPreferences();
+        displayConnection();
     }
 
+    public void displayConnection(){
+        Button b = ((Button)findViewById(R.id.connect));
+        b.setText(R.string.connect_settings);
+    }
     public void displayUserPreferences(){
         TextView age = (TextView) findViewById(R.id.ageValue);
         //TextView temperature = (TextView) findViewById(R.id.temperatureValue);

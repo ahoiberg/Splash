@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/sensorialibrary" />
+            <option value="$PROJECT_DIR$/signalprocessing" />
+            <option value="$PROJECT_DIR$/signalprocessing-native-libs" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 <component name="libraryTable">
   <library name="appcompat-v7-21.0.3">
     <CLASSES>
@@ -9,32 +7,4 @@
     <JAVADOC />
     <SOURCES />
   </library>
-=======
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-<component name="libraryTable">
-  <library name="appcompat-v7-21.0.3">
-    <CLASSES>
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-<<<<<<< Updated upstream
->>>>>>> 2a22ffd9df1fd8c799749cad212a165bdd64d948
-=======
-=======
-<component name="libraryTable">
-  <library name="appcompat-v7-21.0.3">
-    <CLASSES>
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 </component>

@@ -20,12 +20,14 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.sensoria.sensoriadroidjni.SignalProcessing;
 import com.sensoria.sensorialibrary.SAAnklet;
 import com.sensoria.sensorialibrary.SAAnkletInterface;
 import com.sensoria.sensorialibrary.SAFoundAnklet;
 
 public class MainActivity extends ActionBarActivity implements SAAnkletInterface {
     SAAnklet anklet;
+    SignalProcessing signalProcessing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
         setContentView(R.layout.activity_main);
 
         anklet = new SAAnklet(this);
+        signalProcessing = new SignalProcessing();
     }
 
     @Override
@@ -53,6 +56,7 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
     }
 
     public void displayUserPreferences(){
+        /*
         TextView age = (TextView) findViewById(R.id.ageValue);
         TextView height = (TextView) findViewById(R.id.heightValue);
         TextView weight = (TextView) findViewById(R.id.weightValue);
@@ -64,6 +68,7 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
         height.setText(String.format("%d", settings.getInt("height",-1)));
         weight.setText(String.format("%d", settings.getInt("weight",0)));
         gender.setText(settings.getBoolean("isMale",true)?"Male":"Female");
+        */
     }
 
     @Override
@@ -205,7 +210,6 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
         TextView accY = (TextView) findViewById(R.id.accYValue);
         TextView accZ = (TextView) findViewById(R.id.accZValue);
 
-
         tick.setText(String.format("%d", anklet.tick));
         mtb1.setText(String.format("%d", anklet.mtb1));
         mtb5.setText(String.format("%d", anklet.mtb5));
@@ -213,6 +217,24 @@ public class MainActivity extends ActionBarActivity implements SAAnkletInterface
         accX.setText(String.format("%f", anklet.accX));
         accY.setText(String.format("%f", anklet.accY));
         accZ.setText(String.format("%f", anklet.accZ));
+
+
+        double[] rawDataBuffer = new double[6];
+
+        //MTB5 S0
+        //MTB1 S1
+        //Heel S2
+
+        rawDataBuffer[0] = (double) anklet.mtb5;
+        rawDataBuffer[1] = (double) anklet.mtb1;
+        rawDataBuffer[2] = (double) anklet.heel;
+        rawDataBuffer[3] = (double) anklet.accX;
+        rawDataBuffer[4] = (double) anklet.accY;
+        rawDataBuffer[5] = (double) anklet.accZ;
+
+
+        signalProcessing.processIncomingData(rawDataBuffer);
+        Log.e("Steps", String.format("%d", (int)signalProcessing.getStepCount()));
 
     }
 

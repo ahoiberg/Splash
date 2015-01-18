@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/sensorialibrary/sensorialibrary.iml" filepath="$PROJECT_DIR$/sensorialibrary/sensorialibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/signalprocessing/signalprocessing.iml" filepath="$PROJECT_DIR$/signalprocessing/signalprocessing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/signalprocessing-native-libs/signalprocessing-native-libs.iml" filepath="$PROJECT_DIR$/signalprocessing-native-libs/signalprocessing-native-libs.iml" />
       <module fileurl="file://$PROJECT_DIR$/thirsty_bro.iml" filepath="$PROJECT_DIR$/thirsty_bro.iml" />
     </modules>
   </component>

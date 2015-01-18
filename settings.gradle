@@ -1,2 +1,1 @@
-include ':app'
-include ':sensorialibrary'
+include ':app', ':sensorialibrary', ':signalprocessing-native-libs', ':signalprocessing'
