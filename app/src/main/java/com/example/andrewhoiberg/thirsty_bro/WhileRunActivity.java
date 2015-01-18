@@ -1,8 +1,12 @@
 package com.example.andrewhoiberg.thirsty_bro;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.location.Location;
+import android.location.LocationManager;
+import android.location.LocationListener;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
@@ -27,9 +31,10 @@ import com.sensoria.sensorialibrary.SAFoundAnklet;
 /**
  * Created by test on 2015/01/17.
  */
-public class WhileRunActivity extends ActionBarActivity {
+public class WhileRunActivity extends MapsActivity {
     SAAnklet anklet;
     SignalProcessing signalProcessing;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,24 +47,10 @@ public class WhileRunActivity extends ActionBarActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        displayUserPreferences();
+
     }
 
-    public void displayUserPreferences(){
-        //TextView age = (TextView) findViewById(R.id.ageValue);
-        //TextView height = (TextView) findViewById(R.id.heightValue);
-        //TextView weight = (TextView) findViewById(R.id.weightValue);
-        //TextView gender = (TextView) findViewById(R.id.genderValue);
-        //TextView gender = (TextView) findViewById(R.id.genderValue);
-        //TextView gender = (TextView) findViewById(R.id.genderValue);
 
-        //SharedPreferences settings = getSharedPreferences(UserPreferences.PREFS_NAME, 0);
-
-        //age.setText(String.format("%d", settings.getInt("age",0)));
-        //height.setText(String.format("%d", settings.getInt("height",-1)));
-        //weight.setText(String.format("%d", settings.getInt("weight",0)));
-        //gender.setText(settings.getBoolean("isMale",true)?"Male":"Female");
-    }
 
     @Override
     protected void onPause() {
@@ -71,14 +62,14 @@ public class WhileRunActivity extends ActionBarActivity {
         super.onStop();
     }
 
-    public void onAfter(View view) {
+    public void onAfterRun(View view) {
         startActivity(new Intent(this, AfterRunActivity.class));
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -115,7 +106,7 @@ public class WhileRunActivity extends ActionBarActivity {
 
     final static int CONNECTION_REQUEST_CODE=1;
     public void openConnectionSettings(){
-        this.startActivity(new Intent(this,ConnectingActivity.class));
+        this.startActivity(new Intent(this, ConnectingActivity.class));
         Intent connectionSettingsIntent = new Intent(this,ConnectingActivity.class);
         startActivityForResult(connectionSettingsIntent, CONNECTION_REQUEST_CODE);
     }

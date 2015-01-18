@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="google_maps_key" templateMergeStrategy="preserve">AIzaSyA55qePnucPuWGf1l9FZ5gmR4xDXLzjqKQ</string>
 
-    <string name="app_name">Thirsty Bro</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve">AIzaSyA55qePnucPuWGf1l9FZ5gmR4xDXLzjqKQ</string>
+    <string name="app_name">Splash</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">User Settings</string>
     <string name="title_activity_user_settings">User Settings</string>
@@ -17,12 +17,13 @@
     <string name="user_settings_gender_male">Male</string>
     <string name="user_settings_gender_female">Female</string>
     <string name="user_settings_save">Save</string>
-    <string name="title_activity_connecting">Connect to Sensoria</string>
+    <string name="title_activity_connecting">Connect to Sensoria to Start Run</string>
     <string name="title_activity_before_run">Current Running Conditions</string>
     <string name="title_activity_while_run">Running...</string>
     <string name="title_activity_after_run">Good Job!</string>
     <string name="before_run">Connect to Sensoria</string>
     <string name="connect_settings">Connect to Sensoria</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_map_provider">MapProvider</string>
 
 </resources>

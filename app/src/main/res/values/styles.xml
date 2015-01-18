@@ -3,12 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
 
-        <item name="android:windowBackground">@drawable/button</item>
-        <item name="android:colorBackground">@drawable/button</item>
+            <item name="android:windowBackground">@drawable/button</item>
 
-        <item name="android:textColor">@color/text</item>
+            <item name="android:textColor">@color/text</item>
 
-        <item name="android:buttonStyle">@style/button</item>
+            <item name="android:buttonStyle">@style/button</item>
 
     </style>
 
