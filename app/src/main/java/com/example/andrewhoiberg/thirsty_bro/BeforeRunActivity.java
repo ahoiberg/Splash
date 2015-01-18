@@ -49,6 +49,7 @@ public class BeforeRunActivity extends MapsActivity {
         setContentView(R.layout.activity_before);
     }
 
+
     @Override
     public void useWeatherData(WeatherInfo weather,Bitmap weatherIcon){
         weatherData=weather;
@@ -154,8 +155,9 @@ public class BeforeRunActivity extends MapsActivity {
             ((TextView) findViewById(R.id.precipitationValue)).setText(a.weatherData.getPrecipitationHrIn()+" In/Hr");
             ((TextView) findViewById(R.id.windspeedValue)).setText(Math.floor(a.weatherData.getWindSpeed()*10)/10+" mph");
 
-
-            ((ImageView) findViewById(R.id.weatherIcon)).setImageBitmap(a.weatherIcon);
+            if(a.weatherIcon!=null) {
+                ((ImageView) findViewById(R.id.weatherIcon)).setImageBitmap(a.weatherIcon);
+            }
 
         }
 

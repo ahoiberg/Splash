@@ -5,7 +5,7 @@ package com.example.andrewhoiberg.thirsty_bro;
  */
 public class DehydrationCalculator {
 
-    final static double StepFactor = .6;
+    final static double StepFactor = 10;
     final static double WeightFactor = .2;
     final static double TemperatureFactor = .5;
     final static double FemaleGenderFactor = 1.01;
@@ -32,10 +32,14 @@ public class DehydrationCalculator {
         double recommendedIntake;
         genderFactor = g==Gender.MALE? MaleGenderFactor:FemaleGenderFactor;
 
-
+        if(timeElapsed==0)timeElapsed=1;
         double intensity = numSteps/timeElapsed;
 
-        recommendedIntake = Math.min(numSteps*StepFactor + weight*WeightFactor + temp*TemperatureFactor + intensity,MaxHourlyIntake*timeElapsed/60)*genderFactor;
+        if(weight<0)weight=0;
+        if(temp<0)temp=0;
+        if(intensity<0)intensity=0;
+
+        recommendedIntake = (numSteps*StepFactor + weight*WeightFactor + temp*TemperatureFactor + intensity)*genderFactor;
 
         return recommendedIntake;
 

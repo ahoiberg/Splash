@@ -24,18 +24,8 @@
         android:id="@+id/textView"
         android:layout_gravity="left|top"
         android:layout_below="@+id/logo"
-        android:layout_marginTop="100px"
+        android:layout_marginTop="50px"
         android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Stop Running"
-        android:id="@+id/afterRun"
-        android:onClick="onAfterRun"
-        android:layout_below="@+id/pronationValue"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="400px" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,6 +43,15 @@
         android:text="Cadence"
         android:id="@+id/cadence"
         android:layout_below="@+id/steps"
+        android:layout_alignRight="@+id/beforeRun"
+        android:layout_alignEnd="@+id/beforeRun" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Mililiters"
+        android:id="@+id/liters"
+        android:layout_below="@+id/cadence"
         android:layout_alignRight="@+id/beforeRun"
         android:layout_alignEnd="@+id/beforeRun" />
 
@@ -77,5 +76,36 @@
         android:layout_alignBottom="@+id/cadence"
         android:layout_alignEnd="@+id/afterRun"
         />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="0"
+        android:id="@+id/waterValue"
+        android:layout_alignBottom="@+id/liters"
+        android:layout_alignEnd="@+id/afterRun"
+        />
+
+    <ImageView
+        android:layout_width="600px"
+        android:layout_height="wrap_content"
+        android:id="@+id/water"
+        android:src="@drawable/water0"
+        android:layout_alignTop="@+id/cadence"
+        android:layout_marginTop="60px"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop Running"
+        android:id="@+id/afterRun"
+        android:onClick="onAfterRun"
+        android:layout_below="@+id/water"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25px" />
+
 
 </RelativeLayout>

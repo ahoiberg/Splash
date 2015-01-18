@@ -63,20 +63,21 @@ public class MapsActivity extends FragmentActivity {
             Thread thread = new Thread() {
                 public void run() {
                     WeatherInfo weather = WeatherProvider.getWeather("" + location.getLatitude(), "" + location.getLongitude());
-
-                    URL url = null;
-                    try {
-                        url = new URL(weather.getIconURL());
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
                     Bitmap bmp = null;
-                    try {
-                        bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                       if(weather.getIconURL()!=null) {
+                           URL url = null;
+                           try {
+                               url = new URL(weather.getIconURL());
+                           } catch (MalformedURLException e) {
+                               e.printStackTrace();
+                           }
 
+                           try {
+                               bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+                           } catch (IOException e) {
+                               e.printStackTrace();
+                           }
+                       }
                     sp.useWeatherData(weather,bmp);
 
                 }
