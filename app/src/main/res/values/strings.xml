@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="google_maps_key" templateMergeStrategy="preserve">AIzaSyA55qePnucPuWGf1l9FZ5gmR4xDXLzjqKQ</string>
 
     <string name="app_name">Thirsty Bro</string>
     <string name="hello_world">Hello world!</string>

@@ -106,7 +106,7 @@ public class UserSettingsActivity extends ActionBarActivity {
 
 
     public void openMapActivity(){
-        this.startActivity(new Intent(this, BeforeRunActivity.class));
+        this.startActivity(new Intent(this, MapsActivity.class));
     }
 
 
