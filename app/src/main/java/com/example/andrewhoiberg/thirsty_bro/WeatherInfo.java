@@ -7,7 +7,17 @@ public class WeatherInfo {
 	private String iconURL;//url for icon
 	private String windDescription;//wind mph and direction description
     private double windSpeed; //wind mph
-	private double temperatureF;// in Fahrenheit
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    private double temperatureF;// in Fahrenheit
+    private String location; // city, state
 	private String elevationFT;//
 	private float precipitationHrIn;//precipitation within one hour in inches
 	
@@ -67,6 +77,8 @@ public class WeatherInfo {
         builder.append(windSpeed);
 		builder.append(", temperatureF=");
 		builder.append(temperatureF);
+        builder.append(", location=");
+        builder.append(location);
 		builder.append(", elevationFT=");
 		builder.append(elevationFT);
 		builder.append(", precipitationHrIn=");
