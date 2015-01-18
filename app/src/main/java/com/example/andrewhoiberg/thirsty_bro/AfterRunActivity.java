@@ -38,7 +38,7 @@ public class AfterRunActivity extends ActionBarActivity {
         super.onResume();
 
         ((TextView)findViewById(R.id.proValue)).setText(""+AnkletPasser.pronation);
-        ((TextView)findViewById(R.id.mlValue)).setText(""+AnkletPasser.mililiters);
+        ((TextView)findViewById(R.id.mlValue)).setText(""+AnkletPasser.mililiters+" mL");
         ((TextView)findViewById(R.id.tstValue)).setText(""+AnkletPasser.steps);
     }
 
