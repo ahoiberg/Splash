@@ -84,6 +84,7 @@ public class MapsActivity extends FragmentActivity {
         public void onLocationChanged(Location location) {
             // Called when a new location is found by the network location provider.
          //   makeUseOfNewLocation(location);
+            //TODO use intent to pass this location to BeforeRunActivity.java
         }
 
         public void onStatusChanged(String provider, int status, Bundle extras) {}

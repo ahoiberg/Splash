@@ -74,6 +74,7 @@ public class BeforeRunActivity extends ActionBarActivity {
     public void callWeatherAPI(){
         String latitude = "37.252194";
         String longitude = "-121.360474";
+        //TODO pass coordinates here
         WeatherInfo weather = null;
         try {
             weather = WeatherProvider.getWeather(latitude, longitude);
