@@ -143,7 +143,7 @@ public class WhileRunActivity extends ActionBarActivity {
     private String selectedCode;
     private String selectedMac;
 
-    @Override
+    //@Override
     public void didDiscoverDevice() {
 
         Log.w("SensoriaLibrary", "Device Discovered!");
@@ -171,21 +171,21 @@ public class WhileRunActivity extends ActionBarActivity {
         });
     }
 
-    @Override
+    //@Override
     public void didConnect() {
 
         Log.w("SensoriaLibrary", "Device Connected!");
 
     }
 
-    @Override
+   //@Override
     public void didError(String message) {
 
         Log.e("SensoriaLibrary", message);
 
     }
 
-    @Override
+    //@Override
     public void didUpdateData() {
 
         TextView tick = (TextView) findViewById(R.id.tickValue);
