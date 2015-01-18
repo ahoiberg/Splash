@@ -61,7 +61,7 @@ public class BeforeRunActivity extends MapsActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        displayUserPreferences();
+
         displayConnection();
         new WeatherTask().execute(this);
     }
@@ -70,22 +70,7 @@ public class BeforeRunActivity extends MapsActivity {
         Button b = ((Button)findViewById(R.id.connect));
         b.setText(R.string.connect_settings);
     }
-    public void displayUserPreferences(){
-        TextView age = (TextView) findViewById(R.id.ageValue);
-        //TextView temperature = (TextView) findViewById(R.id.temperatureValue);
-        //TextView location = (TextView) findViewById(R.id.locationValue);
-        //TextView humidity = (TextView) findViewById(R.id.humidityValue);
-        //TextView precipitation = (TextView) findViewById(R.id.precipitationValue);
-        //TextView windspeed = (TextView) findViewById(R.id.windspeedValue);
-        //TextView runningcondition = (TextView) findViewById(R.id.runningconditionValue);
 
-
-        //age.setText(String.format("%d", settings.getInt("age",0)));
-
-        //height.setText(String.format("%d", settings.getInt("height",-1)));
-        //weight.setText(String.format("%d", settings.getInt("weight",0)));
-        //gender.setText(settings.getBoolean("isMale",true)?"Male":"Female");
-    }
 
 
 

@@ -36,21 +36,10 @@ public class AfterRunActivity extends ActionBarActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        displayUserPreferences();
-    }
 
-    public void displayUserPreferences(){
-        TextView age = (TextView) findViewById(R.id.ageValue);
-        //extView height = (TextView) findViewById(R.id.heightValue);
-        //xtView weight = (TextView) findViewById(R.id.weightValue);
-        //TextView gender = (TextView) findViewById(R.id.genderValue);
-
-        SharedPreferences settings = getSharedPreferences(UserPreferences.PREFS_NAME, 0);
-
-        age.setText(String.format("%d", settings.getInt("age",0)));
-        //height.setText(String.format("%d", settings.getInt("height",-1)));
-        //weight.setText(String.format("%d", settings.getInt("weight",0)));
-        //gender.setText(settings.getBoolean("isMale",true)?"Male":"Female");
+        ((TextView)findViewById(R.id.proValue)).setText(""+AnkletPasser.pronation);
+        ((TextView)findViewById(R.id.mlValue)).setText(""+AnkletPasser.mililiters);
+        ((TextView)findViewById(R.id.tstValue)).setText(""+AnkletPasser.steps);
     }
 
     @Override

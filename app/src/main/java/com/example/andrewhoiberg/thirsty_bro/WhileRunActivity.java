@@ -97,6 +97,9 @@ public class WhileRunActivity extends MapsActivity {
     }
 
     public void onAfterRun(View view) {
+
+
+
         startActivity(new Intent(this, AfterRunActivity.class));
     }
 
@@ -110,6 +113,8 @@ public class WhileRunActivity extends MapsActivity {
         new WaterTask().execute(this);
     }
 
+    double avg =1;
+    int ticks=0;
 
     private class WaterTask extends AsyncTask<WhileRunActivity, Integer, Long> {
         WhileRunActivity a=null;
@@ -135,6 +140,19 @@ public class WhileRunActivity extends MapsActivity {
                 rawDataBuffer[4] = (double) anklet.accY;
                 rawDataBuffer[5] = (double) anklet.accZ;
 
+                avg=PronationCalculator.CalculateAverage(avg,anklet.mtb1,anklet.mtb5,ticks);
+                ticks++;
+
+                String pro ="";
+                PronationCalculator.Pronation prov=PronationCalculator.determinePronation(avg);
+                if(prov==PronationCalculator.Pronation.NORMAL)pro="Normal";
+                if(prov==PronationCalculator.Pronation.UNDER)pro="Under";
+                if(prov==PronationCalculator.Pronation.OVER)pro="Over";
+                AnkletPasser.pronation=pro;
+
+                Log.e("TB",""+avg);
+                Log.e("TB",""+pro);
+
                 signalProcessing.processIncomingData(rawDataBuffer);
                 //Log.e("Steps", String.format("%d", (int) signalProcessing.getStepCount()));
 
@@ -145,6 +163,7 @@ public class WhileRunActivity extends MapsActivity {
                 TextView waterValue = ((TextView) findViewById(R.id.waterValue));
 
                 steps.setText("" + (int) signalProcessing.getStepCount());
+                AnkletPasser.steps = (int) signalProcessing.getStepCount();
                 cadence.setText("" + (int) signalProcessing.getCadence());
 
                 ImageView water = ((ImageView) findViewById(R.id.water));
@@ -154,6 +173,8 @@ public class WhileRunActivity extends MapsActivity {
                             //settings.getInt("weight", -1), (int) weatherData.getTemperatureF(), (int) (getMin() - startMin), settings.getBoolean("isMale", true) ? DehydrationCalculator.Gender.MALE : DehydrationCalculator.Gender.FEMALE)/1000);
 
                     int liters = mililiters/100;
+
+                    AnkletPasser.mililiters = mililiters;
 
 
                     if (liters < 0) liters = 0;

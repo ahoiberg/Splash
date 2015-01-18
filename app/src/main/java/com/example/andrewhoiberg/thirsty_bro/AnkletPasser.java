@@ -9,4 +9,7 @@ import java.io.Serializable;
  */
 public class AnkletPasser implements Serializable {
     public static SAAnklet anklet;
+    public static int steps;
+    public static int mililiters;
+    public static String pronation="Normal";
 }

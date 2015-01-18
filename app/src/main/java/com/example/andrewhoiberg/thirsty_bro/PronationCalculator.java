@@ -26,9 +26,9 @@ public class PronationCalculator{
 
     public static Pronation determinePronation(double average){
 
-        if (average < .8)
+        if (average < .94)
             return Pronation.UNDER;
-        else if (average > 1.2)
+        else if (average > .96)
             return Pronation.OVER;
         else return Pronation.NORMAL;
 
