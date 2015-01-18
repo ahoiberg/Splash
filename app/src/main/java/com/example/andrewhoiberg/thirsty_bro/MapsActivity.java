@@ -14,13 +14,16 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity {
 
+
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        setUpMapIfNeeded();
+        locationManager=(LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+
+
 
 
     }
@@ -28,14 +31,19 @@ public class MapsActivity extends FragmentActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        setUpMapIfNeeded();
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        setUpMapIfNeeded();
+
 
 
     }
 
     public void SendLocation() {
     this.startActivity(new Intent(this, BeforeRunActivity.class));
+    }
+
+    public void mMap(GoogleMap map){
+
     }
 
     /**
@@ -54,10 +62,11 @@ public class MapsActivity extends FragmentActivity {
      * method in {@link #onResume()} to guarantee that it will be called.
      */
     private void setUpMapIfNeeded() {
+
         // Do a null check to confirm that we have not already instantiated the map.
         if (mMap == null) {
             // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(com.example.andrewhoiberg.thirsty_bro.R.id.map))
+            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
                     .getMap();
             // Check if we were successful in obtaining the map.
             if (mMap != null) {
@@ -73,6 +82,7 @@ public class MapsActivity extends FragmentActivity {
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
+
         mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
     }
 
@@ -83,7 +93,7 @@ public class MapsActivity extends FragmentActivity {
     }
 
     // Acquire a reference to the system Location Manager
-    LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+    LocationManager  locationManager = null;
 
     // Define a listener that responds to location updates
     public LocationListener locationListener = new LocationListener() {
