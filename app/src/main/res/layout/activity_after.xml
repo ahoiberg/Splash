@@ -24,9 +24,9 @@
         android:text="Run Completed"
         android:id="@+id/textView"
         android:layout_gravity="left|top"
-        android:layout_below="@+id/logo"
-        android:layout_marginTop="50px"
-        android:layout_centerHorizontal="true" />
+       android:layout_above="@+id/steps"
+       android:layout_centerHorizontal="true"
+       android:layout_marginBottom="42dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,60 +34,69 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Total Steps"
         android:id="@+id/steps"
-        android:layout_below="@+id/textView"
-        android:layout_alignRight="@+id/beforeRun"
-        android:layout_alignEnd="@+id/beforeRun" />
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/logo"
+        android:layout_alignStart="@+id/logo"
+        android:layout_marginLeft="46dp"
+        android:layout_marginStart="46dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Water (ml)"
         android:id="@+id/cadence"
+        android:layout_marginTop="27dp"
         android:layout_below="@+id/steps"
-        android:layout_alignRight="@+id/beforeRun"
-        android:layout_alignEnd="@+id/beforeRun" />
+        android:layout_alignLeft="@+id/steps"
+        android:layout_alignStart="@+id/steps" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Pronation"
         android:id="@+id/liters"
+        android:layout_marginTop="34dp"
         android:layout_below="@+id/cadence"
-        android:layout_alignRight="@+id/beforeRun"
-        android:layout_alignEnd="@+id/beforeRun" />
+        android:layout_alignLeft="@+id/cadence"
+        android:layout_alignStart="@+id/cadence" />
 
     <TextView
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
         android:id="@+id/tstValue"
-        android:layout_alignBottom="@+id/steps"
-        android:layout_alignEnd="@+id/afterRun"
-        />
+        android:layout_above="@+id/cadence"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView" />
 
     <TextView
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
         android:id="@+id/mlValue"
-        android:layout_alignBottom="@+id/cadence"
-        android:layout_alignEnd="@+id/afterRun"
-        />
+        android:layout_alignTop="@+id/cadence"
+        android:layout_alignLeft="@+id/tstValue"
+        android:layout_alignStart="@+id/tstValue" />
 
     <TextView
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="0"
         android:id="@+id/proValue"
-        android:layout_alignBottom="@+id/liters"
-        android:layout_alignEnd="@+id/afterRun"
-        />
+        android:layout_alignTop="@+id/liters"
+        android:layout_alignLeft="@+id/mlValue"
+        android:layout_alignStart="@+id/mlValue" />
+
+    <ImageView
+        android:layout_width="600px"
+        android:layout_height="wrap_content"
+        android:id="@+id/logo"
+        android:src="@drawable/splash"
+        android:layout_above="@+id/textView"
+        android:layout_centerHorizontal="true" />
 
 
 
